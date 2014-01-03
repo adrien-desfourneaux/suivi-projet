@@ -6,5 +6,6 @@ nbproject
 .idea
 .project
 .settings
+.vagrant
 composer.lock
 vendor/bin
