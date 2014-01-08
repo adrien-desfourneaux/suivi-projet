@@ -23,5 +23,7 @@
         "bjyoungblood/bjy-profiler" : "~1.0",
         "ocramius/ocra-service-manager" : "~2.0"
     },
-    "autoload": {"psr-0": {"": "src"}}
+    "autoload": {
+        "psr-0": { "DzProject": "module/DzProject/src" }
+    }
 }
