@@ -80,6 +80,7 @@ php:
             - mcrypt
             - sqlite
             - curl
+            - xsl
         pear: {  }
         pecl:
             - pecl_http
