@@ -1,6 +1,12 @@
 formatter.name: progress
 
 suites:        
+    Application:
+        namespace:   Application
+        spec_prefix: spec
+        src_path:    'module/Application/src/'
+        spec_path:   'module/Application/'
+
     DzProject:
         namespace:   DzProject
         spec_prefix: spec
