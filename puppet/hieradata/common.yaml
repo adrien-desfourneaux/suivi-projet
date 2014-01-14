@@ -47,6 +47,7 @@ vagrantfile-local:
 server:
     packages:
         - vim
+        - graphviz
     dot_files:
         -
             bash_aliases: null
