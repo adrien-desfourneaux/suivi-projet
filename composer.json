@@ -12,7 +12,8 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.2.*",
-        "doctrine/doctrine-orm-module": "0.*"
+        "doctrine/doctrine-orm-module": "0.*",
+        "zf-commons/zfc-user": "dev-master"
     },
     "require-dev": {
         "codeception/codeception": "*",
@@ -24,6 +25,9 @@
         "ocramius/ocra-service-manager" : "~2.0"
     },
     "autoload": {
-        "psr-0": { "DzProject": "module/DzProject/src" }
+        "psr-0": {
+          "DzProject": "module/DzProject/src",
+          "Application": "module/Application/src"
+        }
     }
 }
