@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Configuration de l'application Suivi-projet
- * @author     Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
- * @package    Suivi-projet
- * @category   Config
- * @license    http://opensource.org/licenses/MIT
- */
-
 return array(
     'modules' => array(
         'ZendDeveloperTools',
@@ -17,6 +9,7 @@ return array(
         'ZfcBase',
         'ZfcUser',
         'DzProject',
+        'DzTask',
         'Application'
     ),
     'module_listener_options' => array(
