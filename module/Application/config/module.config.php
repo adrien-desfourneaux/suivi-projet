@@ -1,10 +1,14 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Configuration file for the Suivi-Projet Application module.
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * PHP Version 5.3.3
+ *
+ * @category Config
+ * @package  Suivi-Projet
+ * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
+ * @license  http://opensource.org/licenses/MIT The MIT License
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/Application/config/module.config.php
  */
 
 return array(
