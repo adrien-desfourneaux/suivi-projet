@@ -1,26 +1,15 @@
 <?php
 
-$dbParams = array(
-    'database'  => 'changeme',
-    'username'  => 'changeme',
-    'password'  => 'changeme',
-    'hostname'  => 'localhost',
-    // buffer_results - only for mysqli buffered queries, skip for others
-    'options' => array('buffer_results' => true)
-);
-
 return array(
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter' => function ($sm) use ($dbParams) {
-                $adapter = new BjyProfiler\Db\Adapter\ProfilingAdapter(array(
-                    'driver'    => 'pdo',
-                    'dsn'       => 'mysql:dbname='.$dbParams['database'].';host='.$dbParams['hostname'],
-                    'database'  => $dbParams['database'],
-                    'username'  => $dbParams['username'],
-                    'password'  => $dbParams['password'],
-                    'hostname'  => $dbParams['hostname'],
-                ));
+            'Zend\Db\Adapter\Adapter' => function ($sm) {
+                $adapter = new BjyProfiler\Db\Adapter\ProfilingAdapter(
+                    array(
+                        'driver' => 'Pdo_Sqlite',
+                        'database' => __DIR__ . '/../../data/suivi-projet.sqlite'
+                    )
+                );
 
                 if (php_sapi_name() == 'cli') {
                     $logger = new Zend\Log\Logger();
@@ -42,3 +31,4 @@ return array(
         ),
     ),
 );
+
