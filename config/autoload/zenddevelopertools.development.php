@@ -1,4 +1,21 @@
 <?php
+
+/**
+ * Fichier de configuration de ZendDeveloperTools.
+ *
+ * Ce fichier, de suffixe ".development.php" n'est chargé que si la valeur de
+ * APP_ENV vaut "development". Cette variable peut être changée dans le
+ * fichier /public/.htaccess à la ligne SetEnv "App_Env" "development".
+ *
+ * PHP Version 5.3.3
+ *
+ * @category Config
+ * @package  SuiviProjet
+ * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
+ * @license  http://opensource.org/licenses/MIT The MIT License
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/config/autoload/zenddevelopertools.development.php
+ */ 
+
 return array(
     'zenddevelopertools' => array(
          /**
