@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Override ProjectController::showallAction() view
+ *
+ * PHP version 5
+ *
+ * @category   Source
+ * @package    SuiviProjet
+ * @subpackage View
+ * @author     Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ * @link       https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/view/dz-project/project/showall.phtml
+ */
+
+?>
+
+<h1>Projets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Désignation</th>
+      <th>Chef de projet</th>
+      <th>Période</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php
+foreach ($projects as $p) {
+    ?>
+    <tr>
+      <td><?php echo $p->getDisplayName(); ?></td>
+      <td></td>
+      <td><?php echo strftime("%d/%m/%Y", $p->getBeginDate()) . ' - ' . strftime("%d/%m/%Y", $p->getEndDate()); ?></td>
+    </tr>
+    <?php
+}
+?>
+  </tbody>
+</table>
