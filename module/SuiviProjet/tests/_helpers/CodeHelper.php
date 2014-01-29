@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Helper for unit tests
+ * Aides pour les tests unitaires
  *
  * PHP version 5.3.3
  *
@@ -14,8 +14,6 @@
  */
 
 namespace Codeception\Module;
-
-// here you can define custom functions for CodeGuy 
 
 /**
  * Classe helper pour les tests unitaires.

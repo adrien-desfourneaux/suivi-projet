@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # /*!
-#     Lance la génération de la documentation pour le module SuiviProjet.
+#     Lance la génération de la documentation pour le module SuiviProjet
 #     @author Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
 #  */
 

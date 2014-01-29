@@ -1,6 +1,6 @@
 <?php
 /**
- * Fichier de module pour le module SuiviProjet.
+ * Fichier de module pour de SuiviProjet
  *
  * PHP Version 5.3.3
  *
@@ -13,11 +13,13 @@
 
 namespace SuiviProjet;
 
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
 /**
- * Classe de module pour le module SuiviProjet.
+ * Classe de module de SuiviProjet.
  *
  * @category Source
  * @package  SuiviProjet
@@ -25,33 +27,41 @@ use Zend\Mvc\MvcEvent;
  * @license  http://opensource.org/licenses/MIT The MIT License
  * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/Module.php
  */
-class Module
+class Module implements
+    AutoloaderProviderInterface,
+    ConfigProviderInterface
 {
     /**
-     * Obtient le fichier de
-     * configuration du module.
-     * 
-     * @return string
-     */
-    public function getConfig()
-    {
-        return include __DIR__ . '/config/module.config.php';
-    }
-
-    /**
-     * obtient la configuration de l'autoloader
-     * pour les classes du module dzproject.
+     * Retourne un tableau à parser par Zend\Loader\AutoloaderFactory.
      *
-     * @return array() configuration de l'autoloader.
+     * @return array
+     *
+     * @see AutoloaderProviderInterface
      */
     public function getAutoloaderConfig()
     {
         return array(
+            /*'Zend\Loader\ClassMapAutoloader' => array(
+                __DIR__ . '/autoload_classmap.php',
+            ),*/
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
         );
+    }
+
+    /**
+     * Retourne la configuration à fusionner avec
+     * la configuration de l'application
+     *
+     * @return array|\Traversable
+     *
+     * @see ConfigProviderInterface
+     */
+    public function getConfig()
+    {
+        return include __DIR__ . '/config/module.config.php';
     }
 }

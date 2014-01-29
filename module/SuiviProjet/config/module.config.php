@@ -16,79 +16,12 @@
  * environnements de test et de développement
  */
 if (defined('SUIVIPROJET_ENV') && SUIVIPROJET_ENV == 'test') {
-    $db_path = __DIR__ . '/../tests/_data/suivi-projet.sqlite';
+    $db_path = __DIR__ . '/../tests/_data/suiviprojet.sqlite';
 } else {
-    $db_path = __DIR__ . '/../data/suivi-projet.sqlite';
+    $db_path = __DIR__ . '/../data/suiviprojet.sqlite';
 }
 
 return array(
-    'router' => array(
-        'routes' => array(
-            'suivi-projet' => array(
-                'type' => 'Segment',
-                'options' => array(
-                    'route'    => '[/]',
-                    'defaults' => array(
-                        'controller' => 'dz-project',
-                        'action'     => 'showall',
-                        'type'       => 'active'
-                    ),
-                ),
-            ),
-        ),
-    ),
-    'doctrine' => array(
-        'driver' => array(
-            'suivi-projet_model' => array(
-                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'paths' => __DIR__ . '/../src/SuiviProjet/Model'
-            ),
-            'orm_default' => array(
-                'drivers' => array(
-                    'SuiviProjet\Model' => 'suivi-projet_model'
-                )
-            )
-        ),
-        'connection' => array(
-            'orm_default' => array(
-                'driverClass' => 'Doctrine\DBAL\Driver\PDOSqlite\Driver',
-                'params' => array(
-                    'user' => '',
-                    'password' => '',
-                    'path' => __DIR__.'/../data/suivi-projet.sqlite',
-                )
-            )
-        )
-    ),
-    'service_manager' => array(
-        'factories' => array(
-            'dz-project_service' => 'SuiviProjet\Service\ProjectServiceFactory',
-        )
-    ),
-//    'service_manager' => array(
-//        'abstract_factories' => array(
-//            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
-//            'Zend\Log\LoggerAbstractServiceFactory',
-//        ),
-//        'aliases' => array(
-//            'translator' => 'MvcTranslator',
-//        ),
-//    ),
-//    'translator' => array(
-//        'locale' => 'en_US',
-//        'translation_file_patterns' => array(
-//            array(
-//                'type'     => 'gettext',
-//                'base_dir' => __DIR__ . '/../language',
-//                'pattern'  => '%s.mo',
-//            ),
-//        ),
-//    ),
-//    'controllers' => array(
-//        'invokables' => array(
-//            'SuiviProjet\Controller\Index' => 'SuiviProjet\Controller\IndexController'
-//        ),
-//    ),
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
@@ -104,27 +37,34 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
-    // Placeholder for console routes
-//    'console' => array(
-//        'router' => array(
-//            'routes' => array(
-//            ),
-//        ),
-//    ),
+    'router' => array(
+        'routes' => array(
+            'suiviprojet' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '[/]',
+                    'defaults' => array(
+                        'controller' => 'dzproject',
+                        'action'     => 'showall',
+                        'type'       => 'active'
+                    ),
+                ),
+            ),
+        ),
+    ),
     'doctrine' => array(
         'driver' => array(
-            'suivi-projet_model' => array(
+            'suiviprojet_entity' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'paths' => __DIR__ . '/../src/SuiviProjet/Model'
+                'paths' => __DIR__ . '/../src/SuiviProjet/Entity'
             ),
             'orm_default' => array(
                 'drivers' => array(
-                    'SuiviProjet\Model' => 'suivi-projet_model'
+                    'SuiviProjet\Entity' => 'suiviprojet_entity'
                 )
             )
         ),
         'connection' => array(
-            // Connection for acceptance tests
             'orm_default' => array(
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOSqlite\Driver',
                 'params' => array(
@@ -134,5 +74,8 @@ return array(
                 )
             )
         )
+    ),
+    'dzproject' => array(
+        'project_entity_class' => 'SuiviProjet\Entity\Project',
     ),
 );

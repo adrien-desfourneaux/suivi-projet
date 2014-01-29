@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # /*!
-#     Lance tous les tests pour le module SuiviProjet.
+#     Lance tous les tests pour le module SuiviProjet
 #     @author Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
 #  */
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # /*!
-#     Lance les sniffers pour le module SuiviProjet.
+#     Lance tous les sniffers pour le module SuiviProjet
 #     @author Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
 #  */
 

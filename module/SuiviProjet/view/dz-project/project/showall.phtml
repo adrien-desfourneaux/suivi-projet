@@ -31,7 +31,7 @@ foreach ($projects as $p) {
     ?>
     <tr>
       <td><?php echo $p->getDisplayName(); ?></td>
-      <td></td>
+      <td><?php echo $p->getUser()->getDisplayName(); ?></td>
       <td><?php echo strftime("%d/%m/%Y", $p->getBeginDate()) . ' - ' . strftime("%d/%m/%Y", $p->getEndDate()); ?></td>
     </tr>
     <?php

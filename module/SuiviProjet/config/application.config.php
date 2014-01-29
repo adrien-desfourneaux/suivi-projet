@@ -5,8 +5,8 @@
  * Ce fichier contient uniquement les modules vraiment nécessaires
  * au fonctionnement du module SuiviProjet.
  *
- * Ce fichier peut être lancé soit par /public/suivi-projet.php
- * ou /public/test/suivi-projet.php
+ * Ce fichier peut être lancé soit par /public/suiviprojet.php
+ * ou /public/suiviprojet.test.php
  *
  * PHP version 5.3.3
  *
@@ -21,6 +21,9 @@ return array(
         'DoctrineModule',
         'DoctrineORMModule',
         'DzProject',
+        'ZfcBase',
+        'ZfcUser',
+        'ZfcUserDoctrineORM',
         'SuiviProjet'
     ),
     'module_listener_options' => array(

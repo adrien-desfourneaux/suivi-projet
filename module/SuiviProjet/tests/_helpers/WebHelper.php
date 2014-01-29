@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Helper for acceptance tests
+ * Aides pour les tests d'acceptation
  * 
  * PHP version 5.3.3
  *

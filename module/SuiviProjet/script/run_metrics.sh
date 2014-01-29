@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # /*!
-#     Lance la génération des métriques pour le module SuiviProjet.
+#     Lance la génération des métriques pour le module SuiviProjet
 #     @author Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
 #  */
 
