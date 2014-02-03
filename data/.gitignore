@@ -1,1 +1,2 @@
-suivi-projet.sqlite
+*
+!.gitignore
