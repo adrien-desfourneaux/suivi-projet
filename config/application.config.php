@@ -25,6 +25,8 @@ $modules = array(
     'DoctrineORMModule',
     'ZfcBase',
     'ZfcUser',
+    'ZfcUserDoctrineORM',
+    'BjyAuthorize',
 
     // Gestion des assets
     'AssetManager',
