@@ -9,7 +9,7 @@
  * @package  SuiviProjet\Entity
  * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
  * @license  http://opensource.org/licenses/MIT The MIT License
- * @link     https://github.com/adrien-desfourneaux/SuiviProjet/tree/master/module/SuiviProjet/src/SuiviProjet/Entity/ProjectInterface.php
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/src/SuiviProjet/Entity/ProjectInterface.php
  */
 
 namespace SuiviProjet\Entity;
@@ -17,11 +17,11 @@ namespace SuiviProjet\Entity;
 /**
  * Interface pour l'entité projet
  *
- * @category Interface
+ * @category Source
  * @package  SuiviProjet\Entity
  * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
  * @license  http://opensource.org/licenses/MIT The MIT License
- * @link     https://github.com/adrien-desfourneaux/SuiviProjet/tree/master/module/SuiviProjet/src/SuiviProjet/Entity/ProjectInterface.php
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/src/SuiviProjet/Entity/ProjectInterface.php
  */
 interface ProjectInterface extends \DzProject\Entity\ProjectInterface
 {

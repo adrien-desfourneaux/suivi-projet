@@ -13,8 +13,10 @@
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.2.*",
         "doctrine/doctrine-orm-module": "0.*",
-        "zf-commons/zfc-user": "dev-master",
-        "zf-commons/zfc-user-doctrine-orm": "0.1.*"
+        "zf-commons/zfc-user": "0.1.2",
+        "zf-commons/zfc-user-doctrine-orm": "0.1.*",
+        "bjyoungblood/bjy-authorize": "1.4.*",
+        "rwoverdijk/assetmanager": "1.*"
     },
     "require-dev": {
         "codeception/codeception": "*",
@@ -36,11 +38,13 @@
         "psr-0": {
             "DzProject": "module/DzProject/src",
             "DzTask": "module/DzTask/src",
+            "DzUser": "module/DzUser/src",
             "SuiviProjet": "module/SuiviProjet/src"
         },
         "classmap": [
             "module/DzProject/Module.php",
             "module/DzTask/Module.php",
+            "module/DzUser/Module.php",
             "module/SuiviProjet/Module.php"
         ]
     }

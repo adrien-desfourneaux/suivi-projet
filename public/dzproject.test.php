@@ -7,7 +7,7 @@
  * du reste de l'application.
  *
  * Utilisation :
- * http://mydomain/test/dz-project.php/project/[:action]
+ * http://mydomain/dzproject.test.php/project[/:action]
  *
  * PHP Version 5.3.3
  *
@@ -15,7 +15,7 @@
  * @package  SuiviProjet
  * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
  * @license  http://opensource.org/licenses/MIT The MIT License
- * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/test/dz-project.php
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/dzproject.test.php
  */
 
 /**

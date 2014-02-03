@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Lance l'application de développement du module DzProject.
- * Seuls le module DzProject et ses dépendances seront chargées.
- * Cela permet le développement du module DzProject seul, séparé
+ * Lance l'application de test du module DzUser.
+ * Seuls le module DzUser et ses dépendances seront chargées.
+ * Cela permet le test du module DzUser seul, séparé
  * du reste de l'application.
  *
  * Utilisation :
- * http://mydomain/dzproject.php/project/[:action]
+ * http://mydomain/dzuser.test.php/user[/:action]
  *
  * PHP Version 5.3.3
  *
@@ -15,8 +15,13 @@
  * @package  SuiviProjet
  * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
  * @license  http://opensource.org/licenses/MIT The MIT License
- * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/dzproject.php
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/dzuser.test.php
  */
+
+/**
+ * Définit l'environnement d'exécution pour le module.
+ */
+define('DZUSER_ENV', 'test');
 
 /**
  * This makes our life easier when dealing with paths. Everything is relative
@@ -33,4 +38,4 @@ if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['RE
 require 'init_autoloader.php';
 
 // Run the application!
-Zend\Mvc\Application::init(require 'module/DzProject/config/application.config.php')->run();
+Zend\Mvc\Application::init(require 'module/DzUser/config/application.config.php')->run();

@@ -4,3 +4,6 @@
 [submodule "module/DzTask"]
 	path = module/DzTask
 	url = https://github.com/dieze/DzTask.git
+[submodule "module/DzUser"]
+	path = module/DzUser
+	url = https://github.com/dieze/DzUser.git

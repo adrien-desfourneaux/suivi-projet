@@ -7,7 +7,7 @@
  * du reste de l'application.
  *
  * Utilisation :
- * http://mydomain/dz-task.php/task/[:action]
+ * http://mydomain/dztask.php/task[/:action]
  *
  * PHP Version 5.3.3
  *
@@ -15,7 +15,7 @@
  * @package  SuiviProjet
  * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
  * @license  http://opensource.org/licenses/MIT The MIT License
- * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/dz-task.php
+ * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/dztask.php
  */
 
 /**

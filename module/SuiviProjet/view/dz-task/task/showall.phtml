@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Override TaskController::showallAction() view
+ *
+ * PHP version 5
+ *
+ * @category   Source
+ * @package    SuiviProjet
+ * @subpackage View
+ * @author     Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ * @link       https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/view/dz-task/task/showall.phtml
+ */
+
+?>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Période</th>
+      <th>Etat</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php
+foreach ($tasks as $t) {
+    ?>
+    <tr>
+      <td><?php echo $t->getDescription(); ?></td>
+      <td><?php echo strftime("%d/%m/%Y", $t->getBeginDate()) . ' - ' . strftime("%d/%m/%Y", $t->getEndDate()); ?></td>
+      <td><?php echo $t->getState()->getLabel(); ?></td>
+    </tr>
+    <?php
+}
+?>
+  </tbody>
+</table>

@@ -20,20 +20,24 @@ $env = getenv('APP_ENV') ?: 'production';
 
 // Use the $env value to determine which modules to load
 $modules = array(
-    // Dependency modules
+    // Modules de dépendences
     'DoctrineModule',
     'DoctrineORMModule',
     'ZfcBase',
     'ZfcUser',
 
-    // Business modules
+    // Gestion des assets
+    'AssetManager',
+
+    // Mes modules
     'DzProject',
     'DzTask',
+    'DzUser',
     'SuiviProjet'
 );
 
 if ($env == 'development') {
-    // Development modules
+    // Modules de développement
     array_push(
         $modules,
         'ZendDeveloperTools',

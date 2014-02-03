@@ -37,16 +37,100 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    // RWOverdijk/AssetManager
+    'asset_manager' => array(
+        'resolver_configs' => array(
+            'paths' => array(
+                __DIR__ . '/../public',
+            ),
+        ),
+    ),
+    'controllers' => array(
+        'invokables' => array(
+            'index' => 'SuiviProjet\Controller\IndexController',
+        ),
+    ),
     'router' => array(
         'routes' => array(
+            
+            // Accueil
+            // Affiche la liste des projets actifs
             'suiviprojet' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/',
+                    'defaults' => array(
+                        'controller' => 'index',
+                        'action'     => 'index',
+                    ),
+
+                    'may_terminate' => true,
+                    'child_routes' => array(
+                        
+                        // Information du module
+                        'module' => array(
+                            'type' => 'Segment',
+                            'options' => array(
+                                'route' => 'module[/]',
+                                'defaults' => array(
+                                    'action' => 'module',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+
+            // Projet
+            'dzproject' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route'    => '[/]',
-                    'defaults' => array(
-                        'controller' => 'dzproject',
-                        'action'     => 'showall',
-                        'type'       => 'active'
+                    'route' => '/project[/]',
+                ),
+
+                'child_routes' => array(
+
+                    // Visualisation des projets suivis
+                    // Amélioration de la route originale
+                    'showall' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => 'show-all[/:type][/]',
+                            'constraints' => array(
+                                'type' => '(all)|(active)|(followed)',
+                            ),
+                            'defaults' => array(
+                                'action' => 'showall',
+                                'type' => 'followed',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+
+            // Tache
+            'dztask' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/project[/]',
+                ),
+
+                'child_routes' => array(
+
+                    // Affichage des taches d'un projet
+                    // Amélioration de la route originale
+                    'showall' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => 'show-all/:id[/]',
+                            'constraints' => array(
+                                'id' => '\d',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'task',
+                                'action' => 'showall',
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -77,5 +161,11 @@ return array(
     ),
     'dzproject' => array(
         'project_entity_class' => 'SuiviProjet\Entity\Project',
+    ),
+    'dztask' => array(
+        'task_entity_class' => 'SuiviProjet\Entity\Task',
+    ),
+    'zfcuser' => array(
+        'enable_display_name' => true,
     ),
 );
