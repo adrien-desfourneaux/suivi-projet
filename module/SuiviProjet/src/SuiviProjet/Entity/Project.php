@@ -42,7 +42,7 @@ class Project extends \DzProject\Entity\Project implements ProjectInterface
     /**
      * Lien vers le chef du projet
      * 
-     * @ORM\ManyToOne(targetEntity="ZfcUserDoctrineORM\Entity\User")
+     * @ORM\ManyToOne(targetEntity="DzUser\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
     protected $user;
@@ -60,7 +60,7 @@ class Project extends \DzProject\Entity\Project implements ProjectInterface
     /**
      * Obtient le chef du projet
      *
-     * @return \ZfcUserDoctrineORM\Entity\User
+     * @return \DzUser\Entity\User
      */
     public function getUser()
     {

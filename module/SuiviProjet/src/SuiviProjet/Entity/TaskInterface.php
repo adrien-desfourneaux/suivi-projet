@@ -35,7 +35,7 @@ interface TaskInterface extends \DzTask\Entity\TaskInterface
     /**
      * Obtient le projet associé à cette tache.
      *
-     * @return \ZfcUserDoctrineORM\Entity\User
+     * @return Project 
      */
     public function getProject();
 }

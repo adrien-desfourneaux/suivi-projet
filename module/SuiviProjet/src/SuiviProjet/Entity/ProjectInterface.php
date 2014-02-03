@@ -35,7 +35,7 @@ interface ProjectInterface extends \DzProject\Entity\ProjectInterface
     /**
      * Obtient le chef du projet
      *
-     * @return \ZfcUserDoctrineORM\Entity\User
+     * @return \DzUser\Entity\User
      */
     public function getUser();
 }
