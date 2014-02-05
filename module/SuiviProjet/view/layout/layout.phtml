@@ -61,7 +61,7 @@
                     </ul>
                 </div><!--/.nav-collapse -->
                 <div class="identity-widget">
-                    <?php echo $this->dzUserIdentityWidget(); ?>
+                    <?php echo $this->dzUserIdentityWidget(array('redirect', $this->url('dzproject/showall', array('type' => 'followed')))); ?>
                 </div>
             </div>
         </nav>
