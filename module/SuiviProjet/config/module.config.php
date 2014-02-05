@@ -48,6 +48,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'index' => 'SuiviProjet\Controller\IndexController',
+            'dztask' => 'SuiviProjet\Controller\TaskController',
         ),
     ),
     'router' => array(
@@ -112,7 +113,7 @@ return array(
             'dztask' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/project[/]',
+                    'route' => '/task[/]',
                 ),
 
                 'child_routes' => array(
@@ -127,7 +128,7 @@ return array(
                                 'id' => '\d',
                             ),
                             'defaults' => array(
-                                'controller' => 'task',
+                                'controller' => 'dztask',
                                 'action' => 'showall',
                             ),
                         ),
