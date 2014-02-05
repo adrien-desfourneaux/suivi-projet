@@ -15,22 +15,36 @@
 
 ?>
 
+<h1>Projets</h1>
+
 <table>
-  <thead>
-    <tr>
-      <th>Désignation</th>
-      <th>Chef de projet</th>
-      <th>Période</th>
-    </tr>
-  </thead>
-  <tbody>
+    <thead>
+      <tr>
+        <th>Désignation</th>
+        <th>Chef de projet</th>
+        <th>Période</th>
+      </tr>
+    </thead>
+    <tbody>
 <?php
 foreach ($projects as $p) {
     ?>
     <tr>
-      <td><?php echo $p->getDisplayName(); ?></td>
-      <td><?php echo $p->getUser()->getDisplayName(); ?></td>
-      <td><?php echo strftime("%d/%m/%Y", $p->getBeginDate()) . ' - ' . strftime("%d/%m/%Y", $p->getEndDate()); ?></td>
+        <td>
+            <a href="<?php echo $this->url('dztask/showall', array('id' => $p->getProjectId())); ?>">
+                <?php echo $p->getDisplayName(); ?>
+            </a>
+        </td>
+        <td>
+            <a href="<?php echo $this->url('dztask/showall', array('id' => $p->getProjectId())); ?>">
+                <?php echo $p->getUser()->getDisplayName(); ?>
+            </a>
+        </td>
+        <td>
+            <a href="<?php echo $this->url('dztask/showall', array('id' => $p->getProjectId())); ?>">
+                <?php echo strftime("%d/%m/%Y", $p->getBeginDate()) . ' - ' . strftime("%d/%m/%Y", $p->getEndDate()); ?>  
+            </a>
+        </td>
     </tr>
     <?php
 }
