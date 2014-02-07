@@ -15,6 +15,8 @@ namespace SuiviProjet;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
@@ -29,7 +31,9 @@ use Zend\Mvc\MvcEvent;
  */
 class Module implements
     AutoloaderProviderInterface,
-    ConfigProviderInterface
+    ConfigProviderInterface,
+    ViewHelperProviderInterface,
+    ServiceProviderInterface
 {
     /**
      * Retourne un tableau à parser par Zend\Loader\AutoloaderFactory.
@@ -63,5 +67,58 @@ class Module implements
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
+    }
+
+    /**
+     * Doit retourner un objet de type \Zend\ServiceManager\Config
+     * ou un tableau pour créer un tel objet.
+     *
+     * @return array|\Zend\ServiceManager\Config
+     */
+
+    public function getViewHelperConfig()
+    {
+        return array(
+            'factories' => array(
+                'routeName' => function ($sm) {
+                    $match = $sm->getServiceLocator()->get('application')->getMvcEvent()->getRouteMatch();
+                    $viewHelper = new View\Helper\RouteName($match);
+                    return $viewHelper;
+                },
+            ),
+        );
+    }
+
+    /**
+     * Doit retourner un objet de type \Zend\ServiceManager\Config
+     * ou un tableau pour créer un tel objet.
+     *
+     * @return array|\Zend\ServiceManager\Config
+     *
+     * @see ServiceProviderInterface
+     */
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+
+                // Remplace le Mapper DzProject\Mapper\Project par SuiviProjet\Mapper\Project
+                'dzproject_project_mapper' => function ($sm) {
+                    $options = $sm->get('dzproject_module_options');
+                    $entityManager = $sm->get('doctrine.entitymanager.orm_default');
+                    $entityClass = $options->getProjectEntityClass();
+                    $authService = $sm->get('zfcuser_auth_service');
+                    return new Mapper\Project($entityManager, $entityClass, $authService);
+                },
+
+                // Remplace le Mapper DzTask\Mapper\Task par SuiviProjet\Mapper\Task
+                'dztask_task_mapper' => function ($sm) {
+                    $options = $sm->get('dztask_module_options');
+                    $entityManager = $sm->get('doctrine.entitymanager.orm_default');
+                    $entityClass = $options->getTaskEntityClass();
+                    return new Mapper\Task($entityManager, $entityClass);
+                },
+            ),
+        );
     }
 }
