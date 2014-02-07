@@ -37,14 +37,6 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
-    // RWOverdijk/AssetManager
-    'asset_manager' => array(
-        'resolver_configs' => array(
-            'paths' => array(
-                __DIR__ . '/../public',
-            ),
-        ),
-    ),
     'controllers' => array(
         'invokables' => array(
             'index' => 'SuiviProjet\Controller\IndexController',
@@ -167,6 +159,24 @@ return array(
         'task_entity_class' => 'SuiviProjet\Entity\Task',
     ),
     'zfcuser' => array(
+        /**
+         * Active le nom d'affichage
+         *
+         * Active le champ nom d'affichage dans le formulaire d'enregistrement.
+         * Le nom d'affichage est alors enregistré dans la base de données.
+         * La valeur par défaut est false
+         *
+         * Valeurs acceptées : booléen true ou false
+         */
         'enable_display_name' => true,
+
+        /**
+         * Active l'enregistrement
+         *
+         * Autorise les utilisateurs à s'enregistrer sur le site.
+         *
+         * Valeurs acceptées: (booléen) true ou false
+         */
+        'enable_registration' => false,
     ),
 );
