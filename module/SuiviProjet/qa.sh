@@ -38,6 +38,10 @@ runcept () {
 runcodesniffer () {
   cdscriptpath
   ../../vendor/bin/phpcs --standard="phpcs.xml" --ignore="/doc/" --extensions="php,phtml" .
+
+  # Search for unwanted tab characters
+  exclude="^\./(\.git/|doc/|.*_log/|.*\.DS_Store$|.*\.png$|.*\.jar$|.*\.sqlite$).*"
+  find -E . -not -regex "$exclude" | xargs grep "\t" -sl | awk '{print "Tab characters in "$1}'
 }
 
 # /*!
@@ -107,6 +111,28 @@ checkdoc () {
 }
 
 # /*!
+#     Lance toutes les commandes
+#  */
+runall () {
+  # test
+  runspec
+  runcept
+
+  # analyse
+  runcodesniffer
+  runmessdetector
+  runcpdetector
+
+  # metric
+  genstats
+  gendepend
+
+  # doc
+  gendoc
+  checkdoc
+}
+
+# /*!
 #     Affiche l'aide
 #  */
 help () {
@@ -117,6 +143,7 @@ help () {
   printf "analyse\t\tanalyse la structure et la syntaxe du code\n"
   printf "metric\t\tanalyse la métrique du code\n"
   printf "doc\t\tgestion de la documentation du module\n"
+  printf "all\t\tlance toutes les commandes\n"
   printf "\naffiche cette aide si aucune action n'est spécifiée\n"
 }
 
@@ -205,5 +232,10 @@ elif [ $1 = 'doc' ]; then
   else helpdoc
   fi
 
-fi
+# all
+elif [ $1 = 'all' ]; then runall;
 
+# help
+else help;
+
+fi
