@@ -28,9 +28,6 @@ $modules = array(
     'ZfcUserDoctrineORM',
     'BjyAuthorize',
 
-    // Gestion des assets
-    'AssetManager',
-
     // Mes modules
     'DzProject',
     'DzTask',
