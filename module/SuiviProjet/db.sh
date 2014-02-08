@@ -57,6 +57,14 @@ create () {
     sqlite3 tests/_data/$DBNAME.sqlite ""
     chmod g+w tests/_data/$DBNAME.sqlite
   fi
+
+  cat data/zfcuser.sqlite.sql \
+    data/bjyauthorize.sqlite.sql \
+    data/dzuser.sqlite.sql \
+    data/dzproject.sqlite.sql \
+    data/dztask.sqlite.sql \
+    data/suiviprojet.sqlite.sql \
+  > tests/_data/dump.sql
 }
 
 # /*!
@@ -65,7 +73,6 @@ create () {
 #  */
 dump () {
   create
-
   cat data/dzuser.dump.sqlite.sql \
     data/dzproject.dump.sqlite.sql \
     data/dztask.dump.sqlite.sql \
