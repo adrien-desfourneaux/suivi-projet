@@ -48,6 +48,23 @@ class Project extends \DzProject\Entity\Project implements ProjectInterface
     protected $user;
 
     /**
+     * Lien vers les tâches du projet
+     *
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="project")
+     */
+    protected $tasks;
+
+    /**
+     * Constructeur de l'entité Projet
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->tasks = new ArrayCollection();
+    }
+
+    /**
      * Obtient l'id du chef de projet.
      *
      * @return integer 
@@ -65,5 +82,53 @@ class Project extends \DzProject\Entity\Project implements ProjectInterface
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Obtient les tâches du projet
+     *
+     * @return array
+     */
+    public function getTasks()
+    {
+        return $this->tasks;
+    }
+
+    /**
+     * Obtient l'état du projet
+     *
+     * @return string Etat du projet
+     *                En cours     "in-progress"
+     *                Pas commencé "not-started"
+     *                En retard    "late"
+     *                Terminé      "done"
+     */
+    public function getState()
+    {
+        $values["done"] = 0.5;
+        $values["not-started"] = 0.5;
+        $values["in-progress"] = 1;
+        $values["late"] = 2;
+
+        if (count($this->tasks) == 0) {
+            return 'not-started';
+        }
+
+        $val = $values[$this->tasks[0]->getState()->getLabel()];
+
+        for ($i=1; $i<count($this->tasks); $i++) {
+            if ($values[$this->tasks[$i]->getState()->getLabel()] > $val) {
+                $val = $values[$this->tasks[$i]->getState()->getLabel()];
+            } else if ($values[$this->tasks[$i]->getState()->getLabel()] == 0.5 && $val == 0.5) {
+                $val = 1;
+            }
+        }
+
+        foreach ($values as $state => $value) {
+            if ($val == $value) return $state;
+        }
+
+        // ERREUR!
+        throw Exception("Mauvaises valeurs des états de tâches en base de données");
     }
 }
