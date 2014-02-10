@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Remplacement de la vue de ProjectController::showallAction()
+ * Remplacement de  ProjectController::showallAction() view
  * Ajout de liens vers les tâches d'un projet
  *
  * PHP version 5
@@ -16,12 +16,6 @@
 
 ?>
 
-<h1>Projets</h1>
-
-<?php if ($this->zfcUserIdentity()) { ?>
-<input type="button" value="Add" onclick="window.open('<?php echo $this->url('dzproject/add'); ?>')" />
-<?php } ?>
-
 <table>
     <thead>
       <tr>
@@ -34,7 +28,7 @@
 <?php
 foreach ($projects as $p) {
     ?>
-    <tr class="project<?php echo ' ' . $p->getState(); ?>">
+    <tr>
         <td>
             <a href="<?php echo $this->url('dztask/showall', array('id' => $p->getProjectId())); ?>">
                 <?php echo $p->getDisplayName(); ?>

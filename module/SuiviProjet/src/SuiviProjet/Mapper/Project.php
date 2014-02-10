@@ -68,10 +68,12 @@ class Project extends \DzProject\Mapper\Project implements ProjectInterface
     {
         $projects = $this->getRepository()->findByUserId($this->getAuthService()->getIdentity()->getId());
 
-        usort($projects, function ($a, $b) {
-            if ($a->getEndDate() == $b->getEndDate()) return 0;
-            return ($a->getEndDate() > $b->getEndDate()) ? 1 : 0;
-        });
+        usort(
+            $projects, function ($el1, $el2) {
+                if ($el1->getEndDate() == $el2->getEndDate()) return 0;
+                return ($el1->getEndDate() > $el2->getEndDate()) ? 1 : 0;
+            }
+        );
 
         return $projects;
     }
