@@ -60,12 +60,21 @@
                         <li class="active"><a href="<?php echo $this->url('suiviprojet') ?>">Suivi Projet</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
-                <div class="identity-widget">
-                    <?php echo $this->dzUserIdentityWidget(array('redirect', $this->url('dzproject/showall', array('type' => 'followed')))); ?>
-                </div>
             </div>
         </nav>
         <div class="container">
+            <div class="identity-widget">
+                <?php
+                if ($this->routeName() != 'zfcuser/login') {
+                    echo $this->dzUserIdentityWidget(
+                        array(
+                            'redirect', $this->url('dzproject/showall', array('type' => 'followed'))
+                        )
+                    );
+                }
+                ?>
+            </div>
+            <div style="clear:both"></div>
             <?php echo $this->content; ?>
             <hr>
             <footer>

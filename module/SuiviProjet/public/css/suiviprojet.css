@@ -1,8 +1,11 @@
-.navbar-collapse {
-	float: left;
+.identity-widget {
+    float: right;
 }
 
-.identity-widget {
-	color: white;
-	float: right;
+.project.late {
+    background-color: red;
+}
+
+.project.done {
+    background-color: gray;
 }
