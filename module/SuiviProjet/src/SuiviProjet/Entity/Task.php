@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Fichier de source de l'entité tache
+ * Fichier de source de l'entité tâche
  *
- * PHP version 5.3.3
+ * PHP version 5.4.0
  *
  * @category Source
  * @package  SuiviProjet\Entity
@@ -29,41 +29,8 @@ use Zend\Stdlib\Exception;
  * @ORM\Table(name="task")
  * @ORM\Entity
  */
-class Task extends \DzTask\Entity\Task implements TaskInterface
+class Task
 {
-    /**
-     * Identifiant du du projet associé à cette tache
-     * @var integer
-     *
-     * @ORM\Column(name="project_id", type="integer", nullable=false)
-     */
-    protected $projectId;
-
-    /**
-     * Lien vers le projet associé à cette tache
-     * 
-     * @ORM\ManyToOne(targetEntity="Project")
-     * @ORM\JoinColumn(name="project_id", referencedColumnName="project_id")
-     */
-    protected $project;
-
-    /**
-     * Obtient l'id du projet associé à cette tache
-     *
-     * @return integer 
-     */
-    public function getProjectId()
-    {
-        return $this->projectId;
-    }
-
-    /**
-     * Obtient le projet associé à cette tache
-     *
-     * @return Project
-     */
-    public function getProject()
-    {
-        return $this->project;
-    }
+    use \DzTask\Entity\TaskTrait,
+        TaskTrait;
 }

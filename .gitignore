@@ -6,6 +6,7 @@ nbproject
 .idea
 .project
 .settings
+*.sublime-workspace
 .vagrant
 composer.lock
 vendor/bin

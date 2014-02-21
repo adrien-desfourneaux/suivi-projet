@@ -2,6 +2,7 @@
 
 /**
  * Fichier de source du TaskController
+ * Etend DzTask\Controller\TaskController
  *
  * PHP version 5.3.3
  *
@@ -30,15 +31,14 @@ class TaskController extends \DzTask\Controller\TaskController
 {
     /**
      * Affiche toutes les taches
-     * ROUTE: /task/show-all/:id
+     * ROUTE: /task/list/:id
      * GET id Identifiant du projet dont il faut afficher les tâches
      *
      * @return ViewModel
      */
-    public function showallAction()
+    public function listAction()
     {
-        $id = $this->params()
-            ->fromRoute('id');
+        $id = $this->params()->fromRoute('id');
 
         $tasks = $this->getTaskService()
             ->getTaskMapper()

@@ -29,7 +29,7 @@ runspec () {
 #  */
 runcept () {
     cdscriptpath
-    ../../vendor/bin/codecept run
+    ../../vendor/bin/codecept run --steps
 }
 
 # /*!
@@ -134,6 +134,15 @@ checkdoc () {
 }
 
 # /*!
+#     Génère le classmap pour l'autoloader
+#  */
+genclassmap () {
+    cdscriptpath
+
+    ../../vendor/bin/classmap_generator.php .
+}
+
+# /*!
 #     Lance toutes les commandes
 #  */
 runall () {
@@ -156,6 +165,9 @@ runall () {
     # doc
     gendoc
     checkdoc
+
+    # loader
+    genclassmap
 }
 
 # /*!
@@ -163,13 +175,14 @@ runall () {
 #  */
 help () {
     printf "Usage: qa.sh [command]\n"
-    printf "help\t\taffiche cette aide\n"
-    printf "help [command]\taffiche l'aide de la commande\n"
-    printf "test\t\tgestion des tests du module\n"
-    printf "code\t\tgestion du code source\n"
-    printf "doc\t\tgestion de la documentation du module\n"
-    printf "all\t\tlance toutes les commandes\n"
-    printf "\naffiche cette aide si aucune action n'est spécifiée\n"
+    printf "help\t\tAffiche cette aide\n"
+    printf "help [command]\tAffiche l'aide de la commande\n"
+    printf "test\t\tGestion des tests du module\n"
+    printf "code\t\tGestion du code source\n"
+    printf "doc\t\tGestion de la documentation du module\n"
+    printf "loader\t\tGestion du loader du module\n"
+    printf "all\t\tLance toutes les commandes\n"
+    printf "\nAffiche cette aide si aucune action n'est spécifiée\n"
 }
 
 # /*!
@@ -186,7 +199,7 @@ helptest () {
 #  */
 helpcode () {
     printf "Usage: qa.sh code [command]\n"
-    printf "check\tvéfifie la syntaxe du code\n"
+    printf "check\tVéfifie la syntaxe du code\n"
     printf "stats\tAffiche des statistiques sur le code\n"
     printf "depend\tGénère les diagrammes de dépendances de code\n"
     printf "\nLance tous les arguments si aucun n'est spécifié\n"
@@ -198,9 +211,18 @@ helpcode () {
 helpdoc () {
     printf "Usage: qa.sh doc [action]\n"
     printf "check\tvérifie les blocs de documentation de code\n"
-    printf "gen\tgénère la documentation du module\n"
+    printf "gen\tGénère la documentation du module\n"
     printf "\nLance toutes les actions si aucune n'est spécifiée\n"
 }
+
+# /*!
+#     Affiche l'aide de la gestion du loader du module
+#  */
+helploader () {
+    printf "Usage: qa.sh loader [arg]\n"
+    printf "classmap\tGénère le classmap pour l'autoload\n"
+    printf "\nLance toutes les arguments si aucun n'est spécifié\n"
+} 
 
 # no argument
 if [ $# -eq 0 ]; then help
@@ -211,6 +233,7 @@ elif [ $1 = 'help' ]; then
     elif [ $2 = 'test' ]; then helptest
     elif [ $2 = 'code' ]; then helpcode
     elif [ $2 = 'doc' ]; then helpdoc
+    elif [ $2 = 'loader' ]; then helploader
     else help
     fi
 
@@ -246,6 +269,13 @@ elif [ $1 = 'doc' ]; then
     if [ $# -eq 1 ]; then checkdoc; gendoc
     elif [ $2 = 'check' ]; then checkdoc
     elif [ $2 = 'gen' ]; then gendoc
+    else helpdoc
+    fi
+
+# loader
+elif [ $1 = 'loader' ]; then
+    if [ $# -eq 1 ]; then genclassmap
+    elif [ $2 = 'classmap' ]; then genclassmap
     else helpdoc
     fi
 

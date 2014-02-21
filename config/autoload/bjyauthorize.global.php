@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'bjyauthorize' => array(
+    //'bjyauthorize' => array(
         /**
          * Les règles peuvent être définies ici selon le format:
          * array(roles (array), resource, [privilege (array|string), assertion])
@@ -9,8 +9,8 @@ return array(
          * Zend\Acl\Assertion\AssertionInterface.
          * *si vous utilisez les assertions, définissez les via le service manager!*
          */
-        'rule_providers' => array(
-            'BjyAuthorize\Provider\Rule\Config' => array(
+      /*  'rule_providers' => array(
+            'BjyAuthorize\Provider\Rule\Config' => array(*/
                 
 //                'allow' => array(
                     /**
@@ -28,15 +28,15 @@ return array(
                 //'deny' => array(
                     // ...
                 //),
-            ),
-        ),
+            /*),
+        ),*/
 
         /**
          * Actuellement, il n'existe que des gardes de contrôleur et de route
          *
          * Pensez à n'activer que l'un ou l'autre des gardes selon vos besoins.
          */
-        'guards' => array(
+        //'guards' => array(
             /**
              * Si ce garde est spécifié ici (c'est à dire qu'il est activé), il va
              * bloquer l'accès à tous les contrôleurs et actions sauf si spécifié ici.
@@ -76,6 +76,6 @@ return array(
                 // Below is the default index action used by the ZendSkeletonApplication
 //                array('route' => 'home', 'roles' => array('guest', 'user')),
 //            ),
-        ),
-    )
+      /*  ),
+    )*/
 );

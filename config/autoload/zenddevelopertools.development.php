@@ -28,7 +28,7 @@ return array(
              * Expects: bool
              * Default: false
              */
-            'enabled' => true,
+            'enabled' => false,
 
             /**
              * Enables or disables the strict mode. If the strict mode is

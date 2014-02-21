@@ -15,13 +15,13 @@
 
 ?>
 
-<h1>Liste des projets</h1>
-
 <?php
 
-echo $this->dzProjectShowAllWidget(
+echo $this->dzProjectListWidget(
     array(
-        'type' => 'active'
+        'type' => 'active',
+        'hasDeleteAction' => false,
+        'hasAddAction' => false,
     )
 );
 

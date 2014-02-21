@@ -7,6 +7,7 @@
 use \Codeception\Maybe;
 use Codeception\Module\Db;
 use Codeception\Module\WebDriver;
+use Codeception\Module\WebHelper;
 
 /**
  * Inherited methods
@@ -2574,12 +2575,12 @@ class WebGuy extends \Codeception\AbstractGuy
      *
      * If the window has no name, the only way to access it is via the `executeInSelenium()` method like so:
      *
-     * ```
+     * ``` php
      * <?php
      * $I->executeInSelenium(function (\Webdriver $webdriver) {
-     *      $handles=$webDriver->getWindowHandles();
+     *      $handles=$webdriver->getWindowHandles();
      *      $last_window = end($handles);
-     *      $webDriver->switchTo()->window($name);
+     *      $webdriver->switchTo()->window($last_window);
      * });
      * ?>
      * ```
@@ -2887,6 +2888,204 @@ class WebGuy extends \Codeception\AbstractGuy
      */
     public function appendField($field, $value) {
         $this->scenario->addStep(new \Codeception\Step\Action('appendField', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Insère les projets par défaut
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultProjectsInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultProjectsInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultProjectsInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Insère les états de tâches par défaut
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultTaskStatesInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultTaskStatesInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultTaskStatesInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Insère les tâches par défaut
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultTasksInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultTasksInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultTasksInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Insère les rôles utilisateurs par défaut
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultUserRolesInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultUserRolesInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultUserRolesInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Insère les utilisateurs par défaut
+     * dans la base de données.
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultUsersInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultUsersInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultUsersInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Définit dans la base de données
+     * les rôles par défaut pour les utilisateur.
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultUserRoleLinkersInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultUserRoleLinkersInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultUserRoleLinkersInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Définit les relations entre les projets et les utilisateurs
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultProjectsUserRelationsInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultProjectsUserRelationsInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultProjectsUserRelationsInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Définit les relations entre les projets et les tâches
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveDefaultTasksProjectRelationsInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveDefaultTasksProjectRelationsInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveDefaultTasksProjectRelationsInDatabase', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     * Définit tout par défaut
+     * dans la base de données
+     *
+     * @return void
+     * @see Codeception\Module\WebHelper::haveAllDefaultsInDatabase()
+     * @return \Codeception\Maybe
+     */
+    public function haveAllDefaultsInDatabase() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveAllDefaultsInDatabase', func_get_args()));
         if ($this->scenario->running()) {
             $result = $this->scenario->runStep();
             return new Maybe($result);

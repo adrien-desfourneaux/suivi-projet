@@ -15,6 +15,11 @@
 
 namespace Codeception\Module;
 
+use DzProject\Test\Helper\WebHelperDbTrait as DzProjectWebHelperTrait;
+use DzTask\Test\Helper\WebHelperDbTrait as DzTaskWebHelperTrait;
+use DzUser\Test\Helper\WebHelperDbTrait as DzUserWebHelperTrait;
+use SuiviProjet\Test\Helper\WebHelperDbTrait as SuiviProjetWebHelperTrait;
+
 /**
  * Classe helper pour les tests d'acceptance.
  * Fonctions personnalisés pour le WebGuy.
@@ -28,4 +33,13 @@ namespace Codeception\Module;
  */
 class WebHelper extends \Codeception\Module
 {
+    use DzProjectWebHelperTrait,
+        DzTaskWebHelperTrait,
+        DzUserWebHelperTrait,
+        SuiviProjetWebHelperTrait {
+            SuiviProjetWebHelperTrait::haveAllDefaultsInDatabase insteadof
+                DzProjectWebHelperTrait,
+                DzTaskWebHelperTrait,
+                DzUserWebHelperTrait;
+    }
 }

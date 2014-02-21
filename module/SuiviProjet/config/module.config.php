@@ -41,6 +41,7 @@ return array(
         'invokables' => array(
             'index' => 'SuiviProjet\Controller\IndexController',
             'dztask' => 'SuiviProjet\Controller\TaskController',
+            'dzuser' => 'SuiviProjet\Controller\UserController',
         ),
     ),
     'router' => array(
@@ -83,17 +84,17 @@ return array(
 
                 'child_routes' => array(
 
-                    // Visualisation des projets suivis
+                    // Listing des projets suivis
                     // Amélioration de la route originale
-                    'showall' => array(
+                    'list' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => 'show-all[/:type][/]',
+                            'route' => 'list[/:type][/]',
                             'constraints' => array(
                                 'type' => '(all)|(active)|(followed)',
                             ),
                             'defaults' => array(
-                                'action' => 'showall',
+                                'action' => 'list',
                                 'type' => 'followed',
                             ),
                         ),
@@ -101,7 +102,7 @@ return array(
                 ),
             ),
 
-            // Tache
+            // Tâche
             'dztask' => array(
                 'type' => 'Segment',
                 'options' => array(
@@ -110,19 +111,38 @@ return array(
 
                 'child_routes' => array(
 
-                    // Affichage des taches d'un projet
+                    // Listing des taches d'un projet
                     // Amélioration de la route originale
-                    'showall' => array(
+                    'list' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => 'show-all/:id[/]',
-                            'constraints' => array(
-                                'id' => '\d',
-                            ),
+                            'route' => 'list/:id[/]',
                             'defaults' => array(
                                 'controller' => 'dztask',
-                                'action' => 'showall',
+                                'action' => 'list',
                             ),
+                        ),
+                    ),
+                ),
+            ),
+
+            // Utilisateur
+            'dzuser' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/user[/]',
+                ),
+                'child_routes' => array(
+
+                    // Compte utilisateur
+                    'account' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => 'account[/]',
+                        ),
+                        'defaults' => array(
+                            'controller' => 'dzuser',
+                            'action' => 'account',
                         ),
                     ),
                 ),
@@ -158,7 +178,7 @@ return array(
     'dztask' => array(
         'task_entity_class' => 'SuiviProjet\Entity\Task',
     ),
-    'zfcuser' => array(
+    'dzuser' => array(
         /**
          * Active le nom d'affichage
          *

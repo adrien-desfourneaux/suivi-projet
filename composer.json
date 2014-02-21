@@ -24,6 +24,7 @@
         "henrikbjorn/phpspec-code-coverage" : "dev-master",
         "phpdocumentor/phpdocumentor": "2.*",
         "squizlabs/php_codesniffer": "1.*",
+        "fabpot/php-cs-fixer": "dev-master",
         "phpmd/phpmd": "1.5.*",
         "pdepend/pdepend": "1.1.1",
         "phploc/phploc": "*",

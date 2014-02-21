@@ -2,10 +2,21 @@
     float: right;
 }
 
+/*.login-widget form:before {
+	content: "Autentification pour chef de projet et administrateur";
+}
+.login-widget form {
+	margin-top: 10px;
+}*/
+
 .project.late {
     background-color: red;
 }
 
 .project.done {
     background-color: gray;
+}
+
+body > .container {
+    margin-top: 0;
 }

@@ -23,10 +23,11 @@ $modules = array(
     // Modules de dépendences
     'DoctrineModule',
     'DoctrineORMModule',
+
     'ZfcBase',
     'ZfcUser',
     'ZfcUserDoctrineORM',
-    'BjyAuthorize',
+    //'BjyAuthorize',
 
     // Mes modules
     'DzProject',
