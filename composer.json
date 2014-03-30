@@ -15,13 +15,14 @@
         "doctrine/doctrine-orm-module": "0.*",
         "zf-commons/zfc-user": "0.1.2",
         "zf-commons/zfc-user-doctrine-orm": "0.1.*",
-        "bjyoungblood/bjy-authorize": "1.4.*"
+        "bjyoungblood/bjy-authorize": "1.4.*",
+        "rwoverdijk/assetmanager": "dev-master"
     },
     "require-dev": {
         "codeception/codeception": "*",
         "phpunit/php-code-coverage": ">=1.2.10,<1.3.0",
         "phpspec/phpspec": "2.0.*@dev",
-        "henrikbjorn/phpspec-code-coverage" : "dev-master",
+        "henrikbjorn/phpspec-code-coverage" : "1.0@dev",
         "phpdocumentor/phpdocumentor": "2.*",
         "squizlabs/php_codesniffer": "1.*",
         "fabpot/php-cs-fixer": "dev-master",
@@ -37,16 +38,18 @@
     },
     "autoload": {
         "psr-0": {
-            "DzProject": "module/DzProject/src",
-            "DzTask": "module/DzTask/src",
-            "DzUser": "module/DzUser/src",
+            "DzMessageModule": "module/DzMessageModule/src",
+            "DzViewModule": "module/DzViewModule/src",
+            "DzServiceModule": "module/DzServiceModule/src",
+            "DzBaseModule": "module/DzBaseModule/src",
+            "DzProjectModule": "module/DzProjectModule/src",
+            "DzTaskModule": "module/DzTaskModule/src",
+            "DzUserModule": "module/DzUserModule/src",
             "SuiviProjet": "module/SuiviProjet/src"
         },
         "classmap": [
-            "module/DzProject/Module.php",
-            "module/DzTask/Module.php",
-            "module/DzUser/Module.php",
-            "module/SuiviProjet/Module.php"
+            "module/DzTaskModule/Module.php",
+            "module/DzUserModule/Module.php"
         ]
     }
 }

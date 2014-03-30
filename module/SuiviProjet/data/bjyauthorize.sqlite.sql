@@ -1,1 +1,1 @@
-../../DzUser/data/bjyauthorize.sqlite.sql
+../../DzUserModule/data/bjyauthorize.sqlite.sql

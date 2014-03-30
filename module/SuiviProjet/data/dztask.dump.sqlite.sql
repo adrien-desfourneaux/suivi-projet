@@ -1,1 +1,1 @@
-../../DzTask/data/dztask.dump.sqlite.sql
+../../DzTaskModule/data/dztask.dump.sqlite.sql

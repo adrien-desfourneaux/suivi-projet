@@ -7,11 +7,11 @@ suites:
         src_path:    'module/Application/src/'
         spec_path:   'module/Application/'
 
-    DzProject:
+    DzProjectModule:
         namespace:   DzProject
         spec_prefix: spec
-        src_path:    'module/DzProject/src/'
-        spec_path:   'module/DzProject/'
+        src_path:    'module/DzProjectModule/src/'
+        spec_path:   'module/DzProjectModule/'
 
 extensions:
     - PhpSpec\Extension\CodeCoverageExtension

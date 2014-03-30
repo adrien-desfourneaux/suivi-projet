@@ -2,7 +2,7 @@
 
 /**
  * Fichier de source du UserController
- * Etend DzUser\Controller\UserController
+ * Etend DzUserModule\Controller\UserController
  *
  * PHP version 5.3.3
  *
@@ -15,7 +15,8 @@
 
 namespace SuiviProjet\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+use DzUserModule\Controller\UserController as DzUserController;
+
 use Zend\View\Model\ViewModel;
 
 /**
@@ -27,7 +28,7 @@ use Zend\View\Model\ViewModel;
  * @license  http://opensource.org/licenses/MIT The MIT License
  * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/src/SuiviProjet/Controller/UserController.php
  */
-class UserController extends \DzUser\Controller\UserController
+class UserController extends DzUserController
 {
     /**
      * Compte de l'utlisateur connecté
@@ -38,6 +39,9 @@ class UserController extends \DzUser\Controller\UserController
      */
     public function accountAction()
     {
-        return new ViewModel();
+        $viewModel = new ViewModel();
+        $viewModel->setTemplate('suivi-projet/user/account.phtml');
+
+        return $viewModel;
     }
 }

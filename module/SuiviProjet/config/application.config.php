@@ -20,15 +20,19 @@ return array(
     'modules' => array(
         'DoctrineModule',
         'DoctrineORMModule',
-        
+
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
         'BjyAuthorize',
 
-        'DzProject',
-        'DzTask',
-        'DzUser',
+        'DzMessageModule',
+        'DzViewModule',
+        'DzServiceModule',
+        'DzBaseModule',
+        'DzProjectModule',
+        'DzTaskModule',
+        'DzUserModule',
         'SuiviProjet'
     ),
     'module_listener_options' => array(

@@ -15,7 +15,6 @@
 namespace SuiviProjet\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Zend\Stdlib\Exception;
 
 /**
  * Task
@@ -29,8 +28,6 @@ use Zend\Stdlib\Exception;
  * @ORM\Table(name="task")
  * @ORM\Entity
  */
-class Task
+class Task extends TaskMappedSuperclass
 {
-    use \DzTask\Entity\TaskTrait,
-        TaskTrait;
 }

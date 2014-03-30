@@ -1,1 +1,1 @@
-../../DzProject/data/dzproject.sqlite.sql
+../../DzProjectModule/data/dzproject.sqlite.sql

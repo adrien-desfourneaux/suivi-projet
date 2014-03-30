@@ -13,4 +13,4 @@
  * @link       https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/tests/_bootstrap.php
  */
 
-// This is global bootstrap for autoloading 
+// This is global bootstrap for autoloading

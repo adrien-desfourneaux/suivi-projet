@@ -15,8 +15,6 @@
 namespace SuiviProjet\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Zend\Stdlib\Exception;
 
 /**
  * Project
@@ -30,8 +28,6 @@ use Zend\Stdlib\Exception;
  * @ORM\Table(name="project")
  * @ORM\Entity
  */
-class Project
+class Project extends ProjectMappedSuperclass
 {
-    use \DzProject\Entity\ProjectTrait,
-        ProjectTrait;
 }

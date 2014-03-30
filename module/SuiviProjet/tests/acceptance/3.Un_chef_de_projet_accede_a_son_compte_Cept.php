@@ -18,19 +18,20 @@
  */
 
 $I = new WebGuy($scenario);
-$I->wantTo('Un chef de projet accede a son compte');
+
+$I->am("Chef de projet");
+$I->wantTo("acceder a mon compte");
+$I->lookForwardTo("voir l'etat de mes projets");
 
 $I->haveAllDefaultsInDatabase();
 
-// Authentification
-$I->amOnPage('/');
-
 // Authentification erronée
+$I->amOnPage('/');
 $I->fillField("input[name='identity']", 'une@erreur.com');
 $I->fillField("input[name='credential']", 'erreur');
 $I->click('Authentification');
-$I->seeCurrentUrlEquals('/');
-$I->see('Erreur auth erroné');
+$I->canSeeCurrentUrlEquals('/');
+$I->canSee('Erreur auth erroné');
 
 // Autentification réussie
 $I->fillField("input[name='identity']", 'john@doe.com');
@@ -38,13 +39,9 @@ $I->fillField("input[name='credential']", 'johndoe');
 $I->click('Authentification');
 
 // Un chef de projet accède à son compte
-$I->seeInCurrentUrl('/user/account');
+$I->canSeeInCurrentUrl('/user/account');
 
 // Les projets en retard sont marqués
-
-
-
-
 
 // Un chef de projet accède à son compte
 //$I->seeInCurrentUrl('/user/account');

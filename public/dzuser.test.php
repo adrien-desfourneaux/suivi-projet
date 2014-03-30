@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Lance l'application de test du module DzUser.
- * Seuls le module DzUser et ses dépendances seront chargées.
- * Cela permet le test du module DzUser seul, séparé
+ * Lance l'application de test du module DzUserModule.
+ * Seuls le module DzUserModule et ses dépendances seront chargées.
+ * Cela permet le test du module DzUserModule seul, séparé
  * du reste de l'application.
  *
  * Utilisation :
@@ -38,4 +38,4 @@ if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['RE
 require 'init_autoloader.php';
 
 // Run the application!
-Zend\Mvc\Application::init(require 'module/DzUser/config/application.config.php')->run();
+Zend\Mvc\Application::init(require 'module/DzUserModule/config/application.config.php')->run();

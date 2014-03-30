@@ -26,20 +26,20 @@ $I->haveAllDefaultsInDatabase();
 
 $I->amOnPage('/');
 
-$I->see('Liste des projets');
+$I->canSee('Liste des projets');
 
-$I->see('Désignation');
-$I->see('Chef de projet');
-$I->see('Période');
+$I->canSee('Désignation');
+$I->canSee('Chef de projet');
+$I->canSee('Période');
 
-$I->dontSee("Projet non débuté");
-$I->see("Projet qui débute aujourd'hui");
-$I->see("Projet actif 1");
-$I->see("Projet actif 2");
-$I->see("Projet qui se termine aujourd'hui");
-$I->dontSee("Projet terminé");
+$I->cantSee("Projet non débuté");
+$I->canSee("Projet qui débute aujourd'hui");
+$I->canSee("Projet actif 1");
+$I->canSee("Projet actif 2");
+$I->canSee("Projet qui se termine aujourd'hui");
+$I->cantSee("Projet terminé");
 
-$I->see("John Doe (Chef de projet)");
-$I->dontSee("Jane Doe (Admin)");
+$I->canSee("John Doe (Chef de projet)");
+$I->cantSee("Jane Doe (Admin)");
 
-$I->see("Authentification");
+$I->canSee("Authentification");

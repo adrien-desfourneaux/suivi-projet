@@ -18,21 +18,19 @@
  */
 
 $I = new WebGuy($scenario);
-$I->wantTo("Un utilisateur visionne les taches d'un projet");
+
+$I->am("Visiteur");
+$I->wantTo("visionner les taches d'un projet");
+$I->lookForwardTo("voir l'état des tache du projet");
 
 $I->haveAllDefaultsInDatabase();
 
-$I->amGoingTo("cliquer sur un projet de la page d'accueil");
 $I->amOnPage('/');
 $I->click('Projet actif 1');
-$I->expect("voir les tâches du projet");
 
-$I->seeInCurrentUrl('/task/list/3');
+$I->canSeeInCurrentUrl('/task/list/3');
 
 // TODO: la liste des tâches est visualisée dans un calendrier
 
 // TODO: le calendrier peut-être affiché en semaines
 // (8 semaines dans la page) ou par mois (4 mois)
-
-$I->expect("Voir l'état de chaque tâche");
-$I->see('');

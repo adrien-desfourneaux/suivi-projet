@@ -29,7 +29,7 @@ use Zend\View\Model\ViewModel;
 class IndexController extends AbstractActionController
 {
     const ROUTE_INDEX = '/';
-    
+
     const CONTROLLER_NAME    = 'index';
 
     /**

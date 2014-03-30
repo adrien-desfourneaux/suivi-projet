@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Lance l'application de développement du module DzTask.
- * Seuls le module DzTask et ses dépendances seront chargées.
- * Cela permet le développement du module DzTask seul, séparé
+ * Lance l'application de développement du module DzTaskModule.
+ * Seuls le module DzTaskModule et ses dépendances seront chargées.
+ * Cela permet le développement du module DzTaskModule seul, séparé
  * du reste de l'application.
  *
  * Utilisation :
@@ -33,4 +33,4 @@ if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['RE
 require 'init_autoloader.php';
 
 // Run the application!
-Zend\Mvc\Application::init(require 'module/DzTask/config/application.config.php')->run();
+Zend\Mvc\Application::init(require 'module/DzTaskModule/config/application.config.php')->run();

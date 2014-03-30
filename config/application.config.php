@@ -23,6 +23,7 @@ $modules = array(
     // Modules de dépendences
     'DoctrineModule',
     'DoctrineORMModule',
+    'AssetManager',
 
     'ZfcBase',
     'ZfcUser',
@@ -30,20 +31,24 @@ $modules = array(
     //'BjyAuthorize',
 
     // Mes modules
-    'DzProject',
-    'DzTask',
-    'DzUser',
+    'DzMessageModule',
+    'DzViewModule',
+    'DzServiceModule',
+    'DzBaseModule',
+    'DzProjectModule',
+    'DzTaskModule',
+    'DzUserModule',
     'SuiviProjet'
 );
 
-if ($env == 'development') {
+/*if ($env == 'development') {
     // Modules de développement
     array_push(
         $modules,
         'ZendDeveloperTools',
         'OcraServiceManager'
     );
-}
+}*/
 
 return array(
     'modules' => $modules,

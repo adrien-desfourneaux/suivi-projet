@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Vue pour l'action UserController::accountAction()
+ *
+ * PHP version 5
+ *
+ * @category   Source
+ * @package    SuiviProjet
+ * @subpackage View
+ * @author     Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ * @link       https://github.com/adrien-desfourneaux/suivi-projet/tree/master/module/SuiviProjet/view/suivi-projet/user/account.phtml
+ */
+
+?>
+
+<h1>Liste des projets suivis</h1>
+
+<?php
+echo $this->dzProjectListWidget(
+	array(
+		'type' => 'followed',
+		'hasTitle' => false
+	)
+);
+?>

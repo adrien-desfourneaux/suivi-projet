@@ -1,9 +1,21 @@
-[submodule "module/DzProject"]
-	path = module/DzProject
-	url = https://github.com/dieze/DzProject.git
-[submodule "module/DzTask"]
-	path = module/DzTask
-	url = https://github.com/dieze/DzTask.git
-[submodule "module/DzUser"]
-	path = module/DzUser
-	url = https://github.com/dieze/DzUser.git
+[submodule "module/DzBaseModule"]
+	path = module/DzBaseModule
+	url = https://github.com/dieze/DzBaseModule.git
+[submodule "module/DzProjectModule"]
+	path = module/DzProjectModule
+	url = https://github.com/dieze/DzProjectModule.git
+[submodule "module/DzTaskModule"]
+	path = module/DzTaskModule
+	url = https://github.com/dieze/DzTaskModule.git
+[submodule "module/DzUserModule"]
+	path = module/DzUserModule
+	url = https://github.com/dieze/DzUserModule.git
+[submodule "module/DzMessageModule"]
+	path = module/DzMessageModule
+	url = https://github.com/dieze/DzMessageModule.git
+[submodule "module/DzViewModule"]
+	path = module/DzViewModule
+	url = https://github.com/dieze/DzViewModule.git
+[submodule "module/DzServiceModule"]
+	path = module/DzServiceModule
+	url = https://github.com/dieze/DzServiceModule.git

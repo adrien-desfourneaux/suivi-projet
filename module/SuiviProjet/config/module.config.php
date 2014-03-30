@@ -39,14 +39,13 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'index' => 'SuiviProjet\Controller\IndexController',
-            'dztask' => 'SuiviProjet\Controller\TaskController',
+            'index'  => 'SuiviProjet\Controller\IndexController',
             'dzuser' => 'SuiviProjet\Controller\UserController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            
+
             // Accueil
             // Affiche la liste des projets actifs
             'suiviprojet' => array(
@@ -60,7 +59,7 @@ return array(
 
                     'may_terminate' => true,
                     'child_routes' => array(
-                        
+
                         // Information du module
                         'module' => array(
                             'type' => 'Segment',
@@ -117,6 +116,9 @@ return array(
                         'type' => 'Segment',
                         'options' => array(
                             'route' => 'list/:id[/]',
+                            'constraints' => array(
+                                'id' => '\d+',
+                            ),
                             'defaults' => array(
                                 'controller' => 'dztask',
                                 'action' => 'list',
@@ -132,6 +134,7 @@ return array(
                 'options' => array(
                     'route' => '/user[/]',
                 ),
+
                 'child_routes' => array(
 
                     // Compte utilisateur

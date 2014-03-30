@@ -98,3 +98,15 @@ __L'administrateur se fait passer pour un chef de projet__
 __L'administrateur se déconnecte de son compte__
 
 * En haut à droite déconnexion, il revient à la « home page » public
+
+Intégration
+============
+
+* Framework Bootstrap 3+ [http://getbootstrap.com/](http://getbootstrap.com/)
+* Google Fontes (2 max)
+* Site Responsive, portabilité tablette et smartphone
+* Microformats (au moins 1 page)
+* HTML5 valide W3C.
+* CSS3, compatibilité Chrome, Firefox et portabilité IE8
+* Notation YSlow : B
+

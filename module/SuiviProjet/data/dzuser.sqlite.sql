@@ -1,1 +1,1 @@
-../../DzUser/data/dzuser.sqlite.sql
+../../DzUserModule/data/dzuser.sqlite.sql

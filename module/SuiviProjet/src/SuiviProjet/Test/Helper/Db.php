@@ -3,7 +3,7 @@
 /**
  * Méthodes d'aide d'insertion de données
  * depuis les fichiers data/*.sql
- * 
+ *
  * PHP version 5.3.3
  *
  * @category Source
@@ -121,6 +121,7 @@ class Db
     public function setDumpFile($dumpFile)
     {
         $this->dumpFile = $dumpFile;
+
         return $this;
     }
 }

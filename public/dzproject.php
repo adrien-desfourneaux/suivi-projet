@@ -1,22 +1,30 @@
 <?php
 
 /**
- * Lance l'application de développement du module DzProject.
- * Seuls le module DzProject et ses dépendances seront chargées.
- * Cela permet le développement du module DzProject seul, séparé
+ * Lance l'application de développement du module DzProjectModule.
+ *
+ * Seuls le module DzProjectModule et ses dépendances seront chargées.
+ * Cela permet le développement du module DzProjectModule seul, séparé
  * du reste de l'application.
+ *
+ * Copier ce fichier dans le répertoire public de votre application.
  *
  * Utilisation :
  * http://mydomain/dzproject.php/project/[:action]
  *
- * PHP Version 5.3.3
+ * PHP Version 5
  *
  * @category Source
- * @package  SuiviProjet
- * @author   Adrien Desfourneaux <adrien.desfourneaux@gmail.com>
- * @license  http://opensource.org/licenses/MIT The MIT License
- * @link     https://github.com/adrien-desfourneaux/suivi-projet/tree/master/public/dzproject.php
+ * @package  DzProjectModule
+ * @author   Adrien Desfourneaux (aka Dieze) <dieze51@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @link     https://github.com/dieze/DzProjectModule
  */
+
+/**
+ * Définit l'environnement d'exécution pour le module.
+ */
+define('DZPROJECT_ENV', 'development');
 
 /**
  * This makes our life easier when dealing with paths. Everything is relative
@@ -33,4 +41,4 @@ if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['RE
 require 'init_autoloader.php';
 
 // Run the application!
-Zend\Mvc\Application::init(require 'module/DzProject/config/application.config.php')->run();
+Zend\Mvc\Application::init(require 'module/DzProjectModule/config/application.config.php')->run();
