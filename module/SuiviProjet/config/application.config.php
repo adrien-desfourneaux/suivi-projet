@@ -18,6 +18,8 @@
  */
 return array(
     'modules' => array(
+        'DzAssetModule',
+        
         'DoctrineModule',
         'DoctrineORMModule',
 

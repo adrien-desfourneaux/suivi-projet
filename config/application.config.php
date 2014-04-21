@@ -20,10 +20,12 @@ $env = getenv('APP_ENV') ?: 'production';
 
 // Use the $env value to determine which modules to load
 $modules = array(
+    // Gestion des assets
+    'DzAssetModule',
+
     // Modules de dépendences
     'DoctrineModule',
     'DoctrineORMModule',
-    'AssetManager',
 
     'ZfcBase',
     'ZfcUser',

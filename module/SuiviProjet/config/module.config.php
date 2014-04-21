@@ -37,6 +37,11 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    'assets' => array(
+        'paths' => array(
+            'suiviprojet' => __DIR__ . '/../public',
+        ),
+    ),
     'controllers' => array(
         'invokables' => array(
             'index'  => 'SuiviProjet\Controller\IndexController',
