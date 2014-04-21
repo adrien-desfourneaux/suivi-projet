@@ -1,0 +1,12 @@
+{
+    "name": "suivi-projet",
+    "version": "0.0.1",
+    "main": "css/suiviprojet.css",
+    "ignore": [
+        "*.php"
+    ],
+    "dependencies": {
+    	"bootstrap" : ">=3.0",
+        "jquery-ui" : "latest"
+    }
+}
