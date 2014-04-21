@@ -16,3 +16,4 @@ composer.phar
 usr
 yankring_history_v2.txt
 .cache
+.composer

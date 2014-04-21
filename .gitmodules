@@ -19,3 +19,6 @@
 [submodule "module/DzServiceModule"]
 	path = module/DzServiceModule
 	url = https://github.com/dieze/DzServiceModule.git
+[submodule "module/DzAssetModule"]
+	path = module/DzAssetModule
+	url = https://github.com/dieze/DzAssetModule.git
