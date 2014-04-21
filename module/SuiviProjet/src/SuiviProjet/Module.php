@@ -125,6 +125,7 @@ class Module implements
     {
         return array(
             'invokables' => array(
+                'SuiviProjet\IndexViewModel'    => 'SuiviProjet\View\Model\IndexViewModel',
                 'SuiviProjet\TaskListViewModel' => 'SuiviProjet\View\Model\TaskListViewModel',
             ),
             'aliases' => array(
