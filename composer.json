@@ -37,18 +37,15 @@
     },
     "autoload": {
         "psr-0": {
-            "DzMessageModule": "module/DzMessageModule/src",
-            "DzViewModule": "module/DzViewModule/src",
-            "DzServiceModule": "module/DzServiceModule/src",
+            "DzAssetModule": "module/DzAssetModule/src",
             "DzBaseModule": "module/DzBaseModule/src",
+            "DzMessageModule": "module/DzMessageModule/src",
             "DzProjectModule": "module/DzProjectModule/src",
+            "DzServiceModule": "module/DzServiceModule/src",
             "DzTaskModule": "module/DzTaskModule/src",
             "DzUserModule": "module/DzUserModule/src",
+            "DzViewModule": "module/DzViewModule/src",
             "SuiviProjet": "module/SuiviProjet/src"
-        },
-        "classmap": [
-            "module/DzTaskModule/Module.php",
-            "module/DzUserModule/Module.php"
-        ]
+        }
     }
 }
