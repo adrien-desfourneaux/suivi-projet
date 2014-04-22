@@ -9,11 +9,3 @@ nbproject
 *.sublime-workspace
 .vagrant
 composer.phar
-.bash*
-.less*
-.ssh*
-.vim*
-usr
-yankring_history_v2.txt
-.cache
-.composer
