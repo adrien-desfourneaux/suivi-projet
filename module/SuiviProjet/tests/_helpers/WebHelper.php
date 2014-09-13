@@ -89,7 +89,7 @@ class WebHelper extends Module implements
         $this->projectDbHelper = new ProjectDbWebHelper($dbModule);
         $this->taskDbHelper    = new TaskDbWebHelper($dbModule);
         $this->userDbHelper    = new UserDbWebHelper($dbModule);
-        $this->dbHelper = new DbWebHelper($dbModule);
+        $this->dbHelper = new SuiviProjetDbWebHelper($dbModule);
     }
 
     // ------------------ Project ------------------

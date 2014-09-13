@@ -22,7 +22,7 @@ $I->am("Visiteur");
 $I->wantTo("se connecter au site");
 $I->lookForwardTo("voir la liste des projets et le formulaire d'authentification");
 
-$I->haveAllDefaultsInDatabase();
+$I->haveAllSuiviProjetDefaultsInDatabase();
 
 $I->amOnPage('/');
 

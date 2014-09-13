@@ -26,11 +26,30 @@ namespace SuiviProjet\Test\Helper;
 class DbWebHelper implements DbWebHelperInterface
 {
     /**
+     * Module Codeception de base de données.
+     *
+     * @var DbModule
+     */
+    protected $db;
+
+    /**
+     * Constructeur de DbWebHelper
+     *
+     * @param DbModule $db Module de Base de données.
+     *
+     * @return void
+     */
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function haveDefaultProjectsUserRelationsInDatabase()
     {
-        $dbh = $this->getModule('Db')->dbh;
+        $dbh = $this->db->dbh;
         $db = new Db($dbh);
         $db->setProjectsUserRelations();
     }
@@ -40,7 +59,7 @@ class DbWebHelper implements DbWebHelperInterface
      */
     public function haveDefaultTasksProjectRelationsInDatabase()
     {
-        $dbh = $this->getModule('Db')->dbh;
+        $dbh = $this->db->dbh;
         $db = new Db($dbh);
         $db->setTasksProjectRelations();
     }
@@ -50,7 +69,7 @@ class DbWebHelper implements DbWebHelperInterface
      */
     public function haveAllSuiviProjetDefaultsInDatabase()
     {
-        $dbh = $this->getModule('Db')->dbh;
+        $dbh = $this->db->dbh;
         $modules = array(
             'DzProjectModule',
             'DzTaskModule',
